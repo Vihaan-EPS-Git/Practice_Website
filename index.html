@@ -1,12 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Website - Home</title>
+    <title>Dragonis Corporation - Home</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation Area -->
+    <header class="bg-gray-100 text-indigo-800 shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+
+            <!-- Logo & Title Section -->
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <a href="index.html" class="inline-block focus:outline-none">
+                        <img src="images/Logo.png" alt="Dragonis Corporation Logo"
+                            class="w-16 h-16 transition duration-300 hover:scale-125 cursor-pointer">
+                    </a>
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-extrabold">
+                            Dragonis Corporation
+                        </h1>
+                        <p class="text-xs text-gray-600">10613 NE 38th Pl, Kirkland, WA 98033</p>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-indigo-800 focus:outline-none p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Links (Collapsible on Mobile) -->
+            <nav id="menu"
+                class="hidden md:flex flex-col md:flex-row gap-3 md:gap-6 font-semibold text-sm pt-2 md:pt-0">
+                <a href="index.html" class="text-indigo-500 transition">Home</a>
+                <a href="catering.html" class="hover:text-indigo-600 transition">Benefits</a>
+                <a href="menus.html" class="hover:text-indigo-600 transition">Cause</a>
+                <a href="ordering.html" class="hover:text-indigo-600 transition">Ordering</a>
+                <a href="privacy.html" class="hover:text-indigo-600 transition">Privacy</a>
+                <a href="legal.html" class="hover:text-indigo-600 transition">Legal</a>
+            </nav>
+
+
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-6xl mx-auto p-6">
+
+        <!-- Notice Banner -->
+        <div class="bg-amber-100 border-l-4 border-amber-500 text-amber-900 p-4 rounded mb-8 shadow-sm">
+            <p class="font-semibold">Order now before our products sell out!</p>
+        </div>
+
+        <!-- Our Product Section -->
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Our Mission</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold mb-2">1. -</h3>
+                <p>insert here</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold mb-2">2. -</h3>
+                <p>insert here</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold mb-2">3. -</h3>
+                <p>insert here</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="bg-gray-100 text-center py-6 text-sm text-gray-600 mt-20 border-t border-gray-200">
+        <p>&copy; Dragonis Corporation. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
 </body>
+
 </html>
