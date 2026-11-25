@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragonis Corporation - Algebra 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation Area -->
+    <header class="bg-gray-100 text-indigo-800 shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+
+            <!-- Logo & Title Section -->
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <a href="index.html" class="inline-block focus:outline-none">
+                        <img src="images/logo.webp" alt="Dragonis Corporation Logo"
+                            class="w-16 h-16 transition duration-300 hover:scale-125 cursor-pointer">
+                    </a>
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-extrabold">
+                            Dragonis Corporation
+                        </h1>
+                        <p class="text-xs text-gray-600">10613 NE 38th Pl, Kirkland, WA 98033</p>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-indigo-800 focus:outline-none p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav id="menu" class="hidden md:flex flex-col md:flex-row gap-3 md:gap-6 font-semibold text-sm pt-2 md:pt-0 
+            whitespace-nowrap hidden md:flex flex-col md:flex-row gap-3 md:gap-6 font-semibold text-sm pt-2 md:pt-0">
+                <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
+                <a href="algebra1.html" class="text-indigo-500 transition">Algebra 1</a>
+                <a href="geometry.html" class="hover:text-indigo-600 transition">Geometry</a>
+                <a href="algebra2.html" class="hover:text-indigo-600 transition">Algebra 2</a>
+                <a href="biology.html" class="hover:text-indigo-600 transition">Biology</a>
+                <a href="chemistry.html" class="hover:text-indigo-600 transition">Chemistry</a>
+                <a href="physics.html" class="hover:text-indigo-600 transition">Physics</a>
+                <a href="spanish1.html" class="hover:text-indigo-600 transition">Spanish 1</a>
+                <a href="spanish2.html" class="hover:text-indigo-600 transition">Spanish 2</a>
+                <a href="spanish3.html" class="hover:text-indigo-600 transition">Spanish 3</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-6xl mx-auto p-6">
+
+        <!-- Notice Banner -->
+        <div class="bg-amber-100 border-l-4 border-amber-500 text-amber-900 p-4 rounded mb-8 shadow-sm">
+            <p class="font-semibold">Order now before our courses sell out!</p>
+        </div>
+
+        <!-- Our Mission Section -->
+        <h2 class="text-2xl text-center font-bold text-gray-900 mb-6 text-3xl">Math - Algebra 1</h2>
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="bg-gray-100 text-center py-6 text-sm text-gray-600 mt-20 border-t border-gray-200">
+        <p>&copy; Dragonis Corporation. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>
