@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dragonis Corporation - Biology</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -38,19 +39,63 @@
                 </button>
             </div>
 
-            <!-- Navigation Links -->
-            <nav id="menu" class="hidden md:flex flex-col md:flex-row gap-3 md:gap-6 font-semibold text-sm pt-2 md:pt-0 
-            whitespace-nowrap hidden md:flex flex-col md:flex-row gap-3 md:gap-6 font-semibold text-sm pt-2 md:pt-0">
-                <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
-                <a href="algebra1.html" class="hover:text-indigo-600 transition">Algebra 1</a>
-                <a href="geometry.html" class="hover:text-indigo-600 transition">Geometry</a>
-                <a href="algebra2.html" class="hover:text-indigo-600 transition">Algebra 2</a>
-                <a href="biology.html" class="text-indigo-500 transition">Biology</a>
-                <a href="chemistry.html" class="hover:text-indigo-600 transition">Chemistry</a>
-                <a href="physics.html" class="hover:text-indigo-600 transition">Physics</a>
-                <a href="spanish1.html" class="hover:text-indigo-600 transition">Spanish 1</a>
-                <a href="spanish2.html" class="hover:text-indigo-600 transition">Spanish 2</a>
-                <a href="spanish3.html" class="hover:text-indigo-600 transition">Spanish 3</a>
+            <!-- Navbar -->
+            <nav>
+                <ul class="flex flex-col md:flex-row md:items-center gap-6 list-none m-0 p-0">
+                    <li><a href="http://127.0.0.1:5500/index.html" class="hover:text-indigo-600 font-medium">Home</a>
+                    </li>
+
+                    <!-- Math Dropdown -->
+                    <li class="relative">
+                        <button onclick="toggleDropdown(event, 'math-menu')"
+                            class="dropbtn hover:text-indigo-600 font-medium cursor-pointer flex items-center gap-1">
+                            Math ▾
+                        </button>
+                        <ul id="math-menu"
+                            class="hidden absolute left-0 mt-2 w-40 bg-white border border-gray-200 rounded shadow-lg py-2 z-50">
+                            <li><a href="http://127.0.0.1:5500/algebra1.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Algebra 1</a></li>
+                            <li><a href="http://127.0.0.1:5500/geometry.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Geometry</a></li>
+                            <li><a href="http://127.0.0.1:5500/algebra2.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Algebra 2</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Science Dropdown -->
+                    <li class="relative">
+                        <button onclick="toggleDropdown(event, 'science-menu')"
+                            class="dropbtn hover:text-indigo-600 font-medium cursor-pointer flex items-center gap-1">
+                            Science ▾
+                        </button>
+                        <ul id="science-menu"
+                            class="hidden absolute left-0 mt-2 w-40 bg-white border border-gray-200 rounded shadow-lg py-2 z-50">
+                            <li><a href="http://127.0.0.1:5500/biology.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Biology</a></li>
+                            <li><a href="http://127.0.0.1:5500/chemistry.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Chemistry</a></li>
+                            <li><a href="http://127.0.0.1:5500/physics.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Physics</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Language Dropdown -->
+                    <li class="relative">
+                        <button onclick="toggleDropdown(event, 'language-menu')"
+                            class="dropbtn hover:text-indigo-600 font-medium cursor-pointer flex items-center gap-1">
+                            Language ▾
+                        </button>
+                        <ul id="language-menu"
+                            class="hidden absolute left-0 mt-2 w-40 bg-white border border-gray-200 rounded shadow-lg py-2 z-50">
+                            <li><a href="http://127.0.0.1:5500/spanish1.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Spanish 1</a></li>
+                            <li><a href="http://127.0.0.1:5500/spanish2.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Spanish 2</a></li>
+                            <li><a href="http://127.0.0.1:5500/spanish3.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Spanish 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </nav>
 
         </div>
@@ -73,14 +118,43 @@
         <p>&copy; Dragonis Corporation. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Mobile Menu Toggle -->
+    <!-- JavaScript for Mobile Menu Toggle and Dropdowns -->
     <script>
         const btn = document.getElementById('menu-btn');
         const menu = document.getElementById('menu');
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+
+        // Toggle specific dropdown menu on click
+        function toggleDropdown(event, menuId) {
+            event.stopPropagation();
+
+            // Close all other dropdown menus first
+            const menus = document.querySelectorAll('nav ul ul');
+            menus.forEach(menu => {
+                if (menu.id !== menuId) {
+                    menu.classList.add('hidden');
+                }
+            });
+
+            // Target menu
+            const targetMenu = document.getElementById(menuId);
+            targetMenu.classList.toggle('hidden');
+        }
+
+        // Close dropdowns when clicking anywhere else on the page
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                const menus = document.querySelectorAll('nav ul ul');
+                menus.forEach(menu => {
+                    menu.classList.add('hidden');
+                });
+            }
+        }
     </script>
 
 </body>
