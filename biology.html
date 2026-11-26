@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dragonis Corporation - Biology</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -18,7 +17,7 @@
             <!-- Logo & Title Section -->
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-4">
-                    <a href="index.html" class="inline-block focus:outline-none">
+                    <a href="http://127.0.0.1:5500/index.html" class="inline-block focus:outline-none">
                         <img src="images/logo.webp" alt="Dragonis Corporation Logo"
                             class="w-16 h-16 transition duration-300 hover:scale-125 cursor-pointer">
                     </a>
@@ -39,60 +38,54 @@
                 </button>
             </div>
 
-            <!-- Navbar -->
             <nav>
                 <ul class="flex flex-col md:flex-row md:items-center gap-6 list-none m-0 p-0">
                     <li><a href="http://127.0.0.1:5500/index.html" class="hover:text-indigo-600 font-medium">Home</a>
                     </li>
-
-                    <!-- Math Dropdown -->
-                    <li class="relative">
-                        <button onclick="toggleDropdown(event, 'math-menu')"
-                            class="dropbtn hover:text-indigo-600 font-medium cursor-pointer flex items-center gap-1">
-                            Math ▾
-                        </button>
-                        <ul id="math-menu"
-                            class="hidden absolute left-0 mt-2 w-40 bg-white border border-gray-200 rounded shadow-lg py-2 z-50">
-                            <li><a href="http://127.0.0.1:5500/algebra1.html"
-                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Algebra 1</a></li>
-                            <li><a href="http://127.0.0.1:5500/geometry.html"
-                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Geometry</a></li>
-                            <li><a href="http://127.0.0.1:5500/algebra2.html"
-                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Algebra 2</a></li>
+                    <li class="relative group">
+                        <a href="http://127.0.0.1:5500/math.html"
+                            class="hover:text-indigo-600 font-medium flex items-center gap-1 py-2">Math ▾</a>
+                        <!-- Added pt-2 to create an invisible hover bridge -->
+                        <ul
+                            class="absolute left-0 top-full pt-2 hidden group-hover:block bg-transparent min-w-[150px] list-none z-50">
+                            <div class="bg-white shadow-lg rounded-md py-2 border border-gray-100">
+                                <li><a href="http://127.0.0.1:5500/algebra1.html"
+                                        class="block px-4 py-2 hover:bg-gray-100 text-sm">Algebra 1</a></li>
+                                <li><a href="http://127.0.0.1:5500/geometry.html"
+                                        class="block px-4 py-2 hover:bg-gray-100 text-sm">Geometry</a></li>
+                                <li><a href="http://127.0.0.1:5500/algebra2.html"
+                                        class="block px-4 py-2 hover:bg-gray-100 text-sm">Algebra 2</a></li>
+                            </div>
                         </ul>
                     </li>
-
-                    <!-- Science Dropdown -->
-                    <li class="relative">
-                        <button onclick="toggleDropdown(event, 'science-menu')"
-                            class="dropbtn hover:text-indigo-600 font-medium cursor-pointer flex items-center gap-1">
-                            Science ▾
-                        </button>
-                        <ul id="science-menu"
-                            class="hidden absolute left-0 mt-2 w-40 bg-white border border-gray-200 rounded shadow-lg py-2 z-50">
-                            <li><a href="http://127.0.0.1:5500/biology.html"
-                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Biology</a></li>
-                            <li><a href="http://127.0.0.1:5500/chemistry.html"
-                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Chemistry</a></li>
-                            <li><a href="http://127.0.0.1:5500/physics.html"
-                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Physics</a></li>
+                    <li class="relative group">
+                        <a href="http://127.0.0.1:5500/science.html"
+                            class="hover:text-indigo-600 font-medium flex items-center gap-1 py-2">Science ▾</a>
+                        <ul
+                            class="absolute left-0 top-full pt-2 hidden group-hover:block bg-transparent min-w-[150px] list-none z-50">
+                            <div class="bg-white shadow-lg rounded-md py-2 border border-gray-100">
+                                <li><a href="http://127.0.0.1:5500/biology.html"
+                                        class="block px-4 py-2 hover:bg-gray-100 text-sm">Biology</a></li>
+                                <li><a href="http://127.0.0.1:5500/chemistry.html"
+                                        class="block px-4 py-2 hover:bg-gray-100 text-sm">Chemistry</a></li>
+                                <li><a href="http://127.0.0.1:5500/physics.html"
+                                        class="block px-4 py-2 hover:bg-gray-100 text-sm">Physics</a></li>
+                            </div>
                         </ul>
                     </li>
-
-                    <!-- Language Dropdown -->
-                    <li class="relative">
-                        <button onclick="toggleDropdown(event, 'language-menu')"
-                            class="dropbtn hover:text-indigo-600 font-medium cursor-pointer flex items-center gap-1">
-                            Language ▾
-                        </button>
-                        <ul id="language-menu"
-                            class="hidden absolute left-0 mt-2 w-40 bg-white border border-gray-200 rounded shadow-lg py-2 z-50">
-                            <li><a href="http://127.0.0.1:5500/spanish1.html"
-                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Spanish 1</a></li>
-                            <li><a href="http://127.0.0.1:5500/spanish2.html"
-                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Spanish 2</a></li>
-                            <li><a href="http://127.0.0.1:5500/spanish3.html"
-                                    class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Spanish 3</a></li>
+                    <li class="relative group">
+                        <a href="http://127.0.0.1:5500/language.html"
+                            class="hover:text-indigo-600 font-medium flex items-center gap-1 py-2">Language ▾</a>
+                        <ul
+                            class="absolute left-0 top-full pt-2 hidden group-hover:block bg-transparent min-w-[150px] list-none z-50">
+                            <div class="bg-white shadow-lg rounded-md py-2 border border-gray-100">
+                                <li><a href="http://127.0.0.1:5500/spanish1.html"
+                                        class="block px-4 py-2 hover:bg-gray-100 text-sm">Spanish 1</a></li>
+                                <li><a href="http://127.0.0.1:5500/spanish2.html"
+                                        class="block px-4 py-2 hover:bg-gray-100 text-sm">Spanish 2</a></li>
+                                <li><a href="http://127.0.0.1:5500/spanish3.html"
+                                        class="block px-4 py-2 hover:bg-gray-100 text-sm">Spanish 3</a></li>
+                            </div>
                         </ul>
                     </li>
                 </ul>
@@ -109,8 +102,50 @@
             <p class="font-semibold">Order now before our courses sell out!</p>
         </div>
 
-        <!-- Our Mission Section -->
-        <h2 class="text-2xl text-center font-bold text-gray-900 mb-6 text-3xl">Science - Biology</h2>
+        <h2 class="text-2xl text-center font-bold text-gray-900 mb-6 md:text-3xl">Science - Biology</h2>
+
+        <!-- Syllabus & Learning Methods Box -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8 border border-gray-200">
+            <h3 class="text-xl font-bold text-indigo-900 mb-3">Course Syllabus & Learning Methods</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                The Biology curriculum explores the fundamental principles and processes of life and living organisms,
+                ranging from molecular structures and cellular functions to genetics, evolution, and complex ecological
+                systems. Students engage with life sciences through investigative lab analysis, conceptual modeling, and
+                scientific inquiry.
+            </p>
+            <h4 class="font-semibold text-gray-900 mb-2">Specific Units & Things to Be Learned:</h4>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li><strong>Unit 1:</strong> The Chemistry of Life & Cell Structure/Function</li>
+                <li><strong>Unit 2:</strong> Cellular Energetics (Photosynthesis & Cellular Respiration)</li>
+                <li><strong>Unit 3:</strong> Cell Cycle, Division, DNA Replication, and Protein Synthesis</li>
+                <li><strong>Unit 4:</strong> Genetics, Heredity, and Mendelian Inheritance</li>
+                <li><strong>Unit 5:</strong> Evolution, Natural Selection, and Biodiversity</li>
+                <li><strong>Unit 6:</strong> Ecology, Energy Flow in Ecosystems, and Environmental Interdependence</li>
+            </ul>
+        </div>
+
+        <!-- Overview and Learning Methods Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold mb-2">Biology Overview</h3>
+                <p>Explore the principles and processes of life and living organisms from microscopic cellular mechanics
+                    to macro ecosystems.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold mb-2">Learning Methods</h3>
+                <p>Our Biology course emphasizes scientific investigation, biological diagramming, and conceptual case
+                    studies of living systems.</p>
+            </div>
+        </div>
+
+        <!-- Image Placeholder Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 text-center">
+            <img src="images/biology-placeholder.webp" alt="Biology Course Illustration Placeholder"
+                class="mx-auto w-full max-w-md h-64 object-cover rounded bg-gray-200 mb-4 flex items-center justify-center">
+            <p class="text-sm text-gray-500 italic">Placeholder: Insert your Biology graphic or screenshot in the
+                'images/' folder.</p>
+        </div>
+
     </main>
 
     <!-- Footer Area -->
